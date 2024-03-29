@@ -22,11 +22,11 @@ html,body{
     position: fixed;
     width: 100%;
     height: 100vh;
-    background-color: #131313;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: #000000;
     z-index: 999;
 }
 
@@ -40,7 +40,7 @@ html,body{
 
 
 .loader-blue{
-    background-color: #000629;
+    background-color: #000;
     position: absolute;
     top: 100%;
     width: 100%;
@@ -353,6 +353,9 @@ nav .nav-links a{
 .about-section .about-right .content-sections .contents hr{
     border-color: rgb(231 231 231 / 18%);
 }
+.about-section .about-right .content-sections .contents:last-child{
+    margin-bottom: 0;
+}
 
 
 
@@ -362,6 +365,7 @@ nav .nav-links a{
     width: 100%;
     background-color: #000;
     padding: 100px 5vw;
+    position: relative;
 }
 .contact-section a{
     text-decoration: none;
@@ -385,6 +389,7 @@ nav .nav-links a{
     color: #cfcfcf;
     margin-bottom: 6px;
     text-decoration: none;
+    width: fit-content;
 }
 
 .connect-me{
@@ -456,4 +461,61 @@ nav .nav-links a{
 }
 .count-section .count:first-child{
     margin-right: 10vw;
+}
+
+
+/* media query */
+@media (max-width:1024px){
+    .hero-section{
+        height: 70vh;
+    }
+    .hero-desc-box{
+        top: 63%;
+    }
+    .works-section{
+        min-height: auto;
+    }
+    .about-section-2{
+        min-height: auto;
+        
+    }
+    .contact-section{
+        height: 40vh;
+    }
+    .about-section-2 h4{
+        max-width: 90%;
+    }
+    .about-section{
+        grid-template-columns: 1fr 1.6fr;
+        align-items: baseline;
+        padding-bottom: 100px;
+    }
+    .about-section .about-left p{
+        display: none;
+    }
+    .about-section .about-left{
+        height: auto;
+    }
+}
+
+
+
+
+
+
+@media (max-width:767px){
+    .contact-section{
+        height: auto;
+    }
+    .contact-section h4{
+        font-size: 30px;
+    }
+    .contact-me-sec{
+        margin-bottom: 40px;
+    }
+    .about-section-2 h4{
+        max-width: 100%;
+        font-size: 26px;
+        line-height: 32px;
+    }
 }

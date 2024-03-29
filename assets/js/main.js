@@ -249,17 +249,21 @@ heroText()
 
 
 // about section
-
-gsap.to('.about-section', {
-    scrollTrigger: {
-        trigger: ".about-section",
-        scroller: "#main",
-        pin: ".about-left",
-        start: "top top",
-        end: "bottom -10%",
-        scrub: 1
-    }
+const mediaScreen = gsap.matchMedia();
+mediaScreen.add("(min-width:1024px)",()=>{
+    gsap.to('.about-section', {
+        scrollTrigger: {
+            trigger: ".about-section",
+            scroller: "#main",
+            pin: ".about-left",
+            start: "top top",
+            end: "bottom -10%",
+            scrub: 1
+        }
+    })
 })
+
+
 
 
 
@@ -340,7 +344,10 @@ gsap.to(".about-section-bg",{
         trigger: ".about-section-2",
         scroller: "#main",
         start: "top 50%",
-        end: "top 30%",
+        end: "bottm bottom",
         scrub:1
     }
 })
+
+
+
