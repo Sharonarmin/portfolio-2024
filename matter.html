@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .matter-div{
+            height: 400px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="matter-div"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script>
+        // module aliases
+        var Engine = Matter.Engine,
+            Render = Matter.Render,
+            Runner = Matter.Runner,
+            Bodies = Matter.Bodies,
+            Composite = Matter.Composite;
+    
+        // Set up Matter.js
+        var engine = Engine.create();
+        var render = Render.create({
+            element: document.querySelector('.matter-div'),
+            engine: engine
+        });
+    
+        // Get the dimensions of the matter-div
+        var matterDiv = document.querySelector('.matter-div');
+        var matterDivWidth = matterDiv.clientWidth;
+        var matterDivHeight = matterDiv.clientHeight;
+    
+        // Calculate dimensions for the ground body
+        var groundWidth = matterDivWidth * 1.25; // Example: Ground 25% wider than div
+        var groundHeight = 20; // Adjust as needed, e.g., 20 units in height
+    
+        // Create the ground body based on calculated dimensions
+        var ground = Bodies.rectangle(
+            matterDivWidth / 2,        // x position (centered horizontally)
+            matterDivHeight + groundHeight / 2, // y position (immediately below div)
+            groundWidth,               // width proportional to div
+            groundHeight,              // fixed height
+            { isStatic: true }         // options: static
+        );
+    
+        // Add bodies to the world
+        Composite.add(engine.world, ground);
+    
+        // Run the renderer and engine
+        Render.run(render);
+        var runner = Runner.create();
+        Runner.run(runner, engine);
+    </script>
+</body>
+
+</html>
