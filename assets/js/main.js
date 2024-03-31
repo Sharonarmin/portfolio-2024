@@ -344,7 +344,7 @@ gsap.to(".about-section-bg",{
         trigger: ".about-section-2",
         scroller: "#main",
         start: "top 50%",
-        end: "bottm bottom",
+        end: "bottm 60%",
         scrub:1
     }
 })
