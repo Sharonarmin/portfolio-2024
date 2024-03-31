@@ -284,7 +284,7 @@ function work(){
             end: "self",
         }
     });
-    gsap.from(".top-card", {
+    gsap.from(".top-card, .center-card", {
         opacity: 0,
         y: "150px",
         duration: .7,
