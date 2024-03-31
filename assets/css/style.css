@@ -593,6 +593,11 @@ nav .nav-links a{
     nav .nav-links a {
         margin-left: 20px;
     }
+    #cursor{
+        height: 60px;
+        width: 60px;
+    
+    }
 
 }
 
