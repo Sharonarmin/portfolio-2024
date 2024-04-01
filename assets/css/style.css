@@ -120,9 +120,7 @@ nav .nav-links a{
     left: 50%;
     transform: translate(-50%,-50%);
     overflow: hidden;
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+
 }
 .hero-section .hero h1{
     font-size: 15vw;
@@ -136,6 +134,9 @@ nav .nav-links a{
     margin: 0;
     padding-top: 30px;
     font-family: "Lexend", sans-serif;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 .hero-section .hero h1 .line .word .char:nth-child(){
